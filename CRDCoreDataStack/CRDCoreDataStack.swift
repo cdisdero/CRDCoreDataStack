@@ -34,7 +34,7 @@ public class CRDCoreDataStack {
     
     // MARK: - Initializers
     
-    init(modelName: String, delegate: CRDCoreDataStackProtocol? = nil) {
+    public init(modelName: String, delegate: CRDCoreDataStackProtocol? = nil) {
         
         self.modelName = modelName
         self.delegate = delegate
