@@ -8,12 +8,18 @@
 
 /* Begin PBXBuildFile section */
 		47CE9B2A1F832B69003A12F4 /* CRDCoreDataStack.h in Headers */ = {isa = PBXBuildFile; fileRef = 47CE9B281F832B69003A12F4 /* CRDCoreDataStack.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		47CE9B311F832B96003A12F4 /* CRDCoreDataStack.swift in Sources */ = {isa = PBXBuildFile; fileRef = 47CE9B301F832B96003A12F4 /* CRDCoreDataStack.swift */; };
+		47CE9B341F832E18003A12F4 /* LICENSE in Resources */ = {isa = PBXBuildFile; fileRef = 47CE9B321F832E18003A12F4 /* LICENSE */; };
+		47CE9B351F832E18003A12F4 /* README.md in Resources */ = {isa = PBXBuildFile; fileRef = 47CE9B331F832E18003A12F4 /* README.md */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		47CE9B251F832B69003A12F4 /* CRDCoreDataStack.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = CRDCoreDataStack.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		47CE9B281F832B69003A12F4 /* CRDCoreDataStack.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CRDCoreDataStack.h; sourceTree = "<group>"; };
 		47CE9B291F832B69003A12F4 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		47CE9B301F832B96003A12F4 /* CRDCoreDataStack.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CRDCoreDataStack.swift; sourceTree = "<group>"; };
+		47CE9B321F832E18003A12F4 /* LICENSE */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = LICENSE; sourceTree = "<group>"; };
+		47CE9B331F832E18003A12F4 /* README.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -30,6 +36,8 @@
 		47CE9B1B1F832B69003A12F4 = {
 			isa = PBXGroup;
 			children = (
+				47CE9B321F832E18003A12F4 /* LICENSE */,
+				47CE9B331F832E18003A12F4 /* README.md */,
 				47CE9B271F832B69003A12F4 /* CRDCoreDataStack */,
 				47CE9B261F832B69003A12F4 /* Products */,
 			);
@@ -46,6 +54,7 @@
 		47CE9B271F832B69003A12F4 /* CRDCoreDataStack */ = {
 			isa = PBXGroup;
 			children = (
+				47CE9B301F832B96003A12F4 /* CRDCoreDataStack.swift */,
 				47CE9B281F832B69003A12F4 /* CRDCoreDataStack.h */,
 				47CE9B291F832B69003A12F4 /* Info.plist */,
 			);
@@ -95,6 +104,7 @@
 				TargetAttributes = {
 					47CE9B241F832B69003A12F4 = {
 						CreatedOnToolsVersion = 9.0;
+						LastSwiftMigration = 0900;
 						ProvisioningStyle = Automatic;
 					};
 				};
@@ -121,6 +131,8 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				47CE9B351F832E18003A12F4 /* README.md in Resources */,
+				47CE9B341F832E18003A12F4 /* LICENSE in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -131,6 +143,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				47CE9B311F832B96003A12F4 /* CRDCoreDataStack.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -186,7 +199,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				MTL_ENABLE_DEBUG_INFO = YES;
 				ONLY_ACTIVE_ARCH = YES;
 				SDKROOT = iphoneos;
@@ -240,7 +253,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				SDKROOT = iphoneos;
 				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
@@ -253,6 +266,7 @@
 		47CE9B2E1F832B69003A12F4 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_IDENTITY = "";
 				CODE_SIGN_STYLE = Automatic;
 				DEFINES_MODULE = YES;
@@ -266,6 +280,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = com.ChrisDisdero.CRDCoreDataStack;
 				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
 				SKIP_INSTALL = YES;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 4.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -274,6 +289,7 @@
 		47CE9B2F1F832B69003A12F4 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_IDENTITY = "";
 				CODE_SIGN_STYLE = Automatic;
 				DEFINES_MODULE = YES;

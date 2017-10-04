@@ -6,7 +6,7 @@
 //  Copyright © 2017 Christopher Disdero. All rights reserved.
 //
 
-#import <UIKit/UIKit.h>
+#import <UIKit/UIKit.h> 
 
 //! Project version number for CRDCoreDataStack.
 FOUNDATION_EXPORT double CRDCoreDataStackVersionNumber;
