@@ -18,7 +18,7 @@ I got tired of adding the same boilerplate Core Data stack code to every Swift a
 ## Requirements
 - iOS 10.0+ / macOS 10.11+ / watchOS 3.0+ / tvOS 9.0+
 - Xcode 8.2+
-- Swift 3.0+
+- Swift 4.0+
 
 ## Installation
 You can simply copy the following files from the GitHub tree into your project:
