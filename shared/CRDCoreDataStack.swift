@@ -128,13 +128,26 @@ public class CRDCoreDataStack {
             let persistentStoreURL = self.persistentStoreURL
             
             do {
-                
-                let options = [
-                    NSMigratePersistentStoresAutomaticallyOption : true,
-                    NSInferMappingModelAutomaticallyOption : true,
-                    NSPersistentStoreFileProtectionKey : FileProtectionType.complete,
-                    NSSQLitePragmasOption : NSDictionary(dictionary: ["journal_mode": "DELETE"])
-                    ] as [String : Any]
+
+                #if os(macOS)
+
+                    let options = [
+                        NSMigratePersistentStoresAutomaticallyOption : true,
+                        NSInferMappingModelAutomaticallyOption : true,
+                        NSSQLitePragmasOption : NSDictionary(dictionary: ["journal_mode": "DELETE"])
+                        ] as [String : Any]
+
+                #else
+
+                    let options = [
+                        NSMigratePersistentStoresAutomaticallyOption : true,
+                        NSInferMappingModelAutomaticallyOption : true,
+                        NSPersistentStoreFileProtectionKey : FileProtectionType.complete,
+                        NSSQLitePragmasOption : NSDictionary(dictionary: ["journal_mode": "DELETE"])
+                        ] as [String : Any]
+
+                #endif
+
                 try persistentStoreCoordinator.addPersistentStore(ofType: NSSQLiteStoreType, configurationName: nil, at: persistentStoreURL, options: options)
                 
             } catch let error as NSError {
