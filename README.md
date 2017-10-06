@@ -81,7 +81,47 @@ The library is easy to use.  Just import CRDCoreDataStack and create a new objec
 let coreDataStack = CRDCoreDataStack(modelName, delegate)
 ```
 
-The modelName parameter is the name of the Core Data xcdatamodeld file.  The second optional delegate parameter is a reference to a class instance that implements the CRDCoreDataStackProtocol, which consists of one function called 'seedDataStore' which allows you to seed the model data store at the appropriate time.
+The modelName parameter is the name of the Core Data xcdatamodeld file.  The second optional delegate parameter is a reference to a class instance that implements the CRDCoreDataStackProtocol, which consists of one function called 'seedDataStore' which allows you to seed the model data store when it is created for the first time.  As an example of seeding:
+
+```
+func seedDataStore() {
+
+    do {
+
+        // Create and insert some new data objects in the store.
+        let context = self.coreDataStack.privateChildManagedObjectContext()
+    
+        // First object
+        var myDataObject = try MyDataObject(context: context)
+        myDataObject.name = "Frank"
+
+        // Second object
+        myDataObject = try MyDataObject(context: context)
+        myDataObject.name = "John"
+
+        // Third object
+        myDataObject = try MyDataObject(context: context)
+        myDataObject.name = "Chris"
+
+        // Commit the new objects to the private context.
+        try context.save()
+
+        // Save all private and main context changes to the data store.
+        self.coreDataStack.saveChanges(onError: { (error) in
+
+            if let error = error {
+            
+                print(error)
+            }
+        })
+
+    } catch let error {
+
+        print(error)
+    }
+}
+
+```
 
 You probably want to store the coreDataStack instance you created above in a central location that is accessible from most all of the code in your app, such as AppDelegate.
 
@@ -99,9 +139,11 @@ CRDCoreDataStack.notificationInitialized
 CRDCoreDataStack.notificationInitializedFailed
 ```
 
-You should wait until you receive the `CRDCoreDataStack.notificationInitialization` before doing anything with the data store.  As an example here is some code that accomplishes this using the `NotificationCenter.default`:
+You should wait until you receive the `CRDCoreDataStack.notificationInitialization` before doing anything with the data store.  As an example here is some code that shows how to use these notifications:
 
 ```
+// Notification that the stack was successfully initialized and the database was seeded
+// (if it was newly created)
 NotificationCenter.default.addObserver(forName: Notification.Name(CRDCoreDataStack.notificationInitialized), object: nil, queue: OperationQueue.main) { (notification) in
 
     do {
@@ -129,9 +171,17 @@ NotificationCenter.default.addObserver(forName: Notification.Name(CRDCoreDataSta
     }
 }
 
+// Notification that the stack failed to initialize.
 NotificationCenter.default.addObserver(forName: Notification.Name(CRDCoreDataStack.notificationInitializedFailed), object: nil, queue: OperationQueue.main) { (notification) in
 
-    print(notification)
+    // See if the notification has an error in the userInfo.
+    if let userInfo = notification.userInfo, userInfo.count > 0 {
+
+        if let error = userInfo["error"] {
+
+            print(error)
+        }
+    }
 }
 
 ```
@@ -141,7 +191,7 @@ You can save any changes to the private and main contexts to disk using the save
 ```
 coreDataStack.saveChanges { (error) in
 
-   // TODO: report error.
+   print(error)
 }
 
 ```
