@@ -117,8 +117,8 @@ public class CRDCoreDataStack {
                 
                 DispatchQueue.main.async {
                     
-                    // Send initialization notification
-                    NotificationCenter.default.post(name: NSNotification.Name(rawValue: CRDCoreDataStack.notificationInitializedFailed), object: nil)
+                    // Send initialization failed notification
+                    NotificationCenter.default.post(name: NSNotification.Name(rawValue: CRDCoreDataStack.notificationInitializedFailed), object: self)
                 }
                 
                 return
@@ -126,6 +126,17 @@ public class CRDCoreDataStack {
             
             // Helper
             let persistentStoreURL = self.persistentStoreURL
+            
+            // Check if the persistent store exists and if not, set a flag to indicate we are creating it for the first time.
+            var persistentStoreNewlyCreated = true
+            do {
+                
+                persistentStoreNewlyCreated = !(try persistentStoreURL.checkResourceIsReachable())
+            
+            } catch {
+                
+                // Do nothing.
+            }
             
             do {
 
@@ -152,19 +163,28 @@ public class CRDCoreDataStack {
                 
             } catch let error as NSError {
                 
-                print("\(error)")
+                DispatchQueue.main.async {
+                    
+                    // Send initialization failed notification
+                    NotificationCenter.default.post(name: NSNotification.Name(rawValue: CRDCoreDataStack.notificationInitializedFailed), object: self, userInfo:["error": error])
+                }
+                
+                return
             }
             
             DispatchQueue.main.async {
                 
-                // Seed the database if necessary
-                if let delegate = self.delegate {
-                
-                    delegate.seedDataStore()
+                // Seed the database if the persistent store was newly created.
+                if persistentStoreNewlyCreated {
+    
+                    if let delegate = self.delegate {
+                        
+                        delegate.seedDataStore()
+                    }
                 }
                 
                 // Send initialization notification
-                NotificationCenter.default.post(name: NSNotification.Name(rawValue: CRDCoreDataStack.notificationInitialized), object: nil)
+                NotificationCenter.default.post(name: NSNotification.Name(rawValue: CRDCoreDataStack.notificationInitialized), object: self)
             }
         }
     }
