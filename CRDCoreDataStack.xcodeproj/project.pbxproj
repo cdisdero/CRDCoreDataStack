@@ -7,6 +7,15 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		4722E5AB1F872667001EE1A0 /* CRDCoreDataStack.podspec in Resources */ = {isa = PBXBuildFile; fileRef = 476998541F85D8170034B58D /* CRDCoreDataStack.podspec */; };
+		4722E5AC1F872667001EE1A0 /* LICENSE in Resources */ = {isa = PBXBuildFile; fileRef = 47CE9B321F832E18003A12F4 /* LICENSE */; };
+		4722E5AD1F872667001EE1A0 /* README.md in Resources */ = {isa = PBXBuildFile; fileRef = 47CE9B331F832E18003A12F4 /* README.md */; };
+		4722E5AE1F872667001EE1A0 /* CRDCoreDataStack.podspec in Resources */ = {isa = PBXBuildFile; fileRef = 476998541F85D8170034B58D /* CRDCoreDataStack.podspec */; };
+		4722E5AF1F872667001EE1A0 /* LICENSE in Resources */ = {isa = PBXBuildFile; fileRef = 47CE9B321F832E18003A12F4 /* LICENSE */; };
+		4722E5B01F872667001EE1A0 /* README.md in Resources */ = {isa = PBXBuildFile; fileRef = 47CE9B331F832E18003A12F4 /* README.md */; };
+		4722E5B11F872668001EE1A0 /* CRDCoreDataStack.podspec in Resources */ = {isa = PBXBuildFile; fileRef = 476998541F85D8170034B58D /* CRDCoreDataStack.podspec */; };
+		4722E5B21F872668001EE1A0 /* LICENSE in Resources */ = {isa = PBXBuildFile; fileRef = 47CE9B321F832E18003A12F4 /* LICENSE */; };
+		4722E5B31F872668001EE1A0 /* README.md in Resources */ = {isa = PBXBuildFile; fileRef = 47CE9B331F832E18003A12F4 /* README.md */; };
 		476998331F85D1A90034B58D /* CRDCoreDataStackMac.h in Headers */ = {isa = PBXBuildFile; fileRef = 476998311F85D1A90034B58D /* CRDCoreDataStackMac.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		476998371F85D1BA0034B58D /* CRDCoreDataStack.swift in Sources */ = {isa = PBXBuildFile; fileRef = 47CE9B301F832B96003A12F4 /* CRDCoreDataStack.swift */; };
 		476998411F85D3B50034B58D /* CRDCoreDataStackTV.h in Headers */ = {isa = PBXBuildFile; fileRef = 4769983F1F85D3B50034B58D /* CRDCoreDataStackTV.h */; settings = {ATTRIBUTES = (Public, ); }; };
@@ -304,6 +313,9 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				4722E5AD1F872667001EE1A0 /* README.md in Resources */,
+				4722E5AC1F872667001EE1A0 /* LICENSE in Resources */,
+				4722E5AB1F872667001EE1A0 /* CRDCoreDataStack.podspec in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -311,6 +323,9 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				4722E5B01F872667001EE1A0 /* README.md in Resources */,
+				4722E5AF1F872667001EE1A0 /* LICENSE in Resources */,
+				4722E5AE1F872667001EE1A0 /* CRDCoreDataStack.podspec in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -318,6 +333,9 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				4722E5B31F872668001EE1A0 /* README.md in Resources */,
+				4722E5B21F872668001EE1A0 /* LICENSE in Resources */,
+				4722E5B11F872668001EE1A0 /* CRDCoreDataStack.podspec in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
