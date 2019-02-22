@@ -11,8 +11,9 @@ Pod::Spec.new do |s|
   # ―――  Spec Metadata  ―――――――――――――――――――――――――――――――――――――――――――――――――――――――――― #
   #
 
+s.swift_version = '4.2'
   s.name         = "CRDCoreDataStack"
-  s.version      = "1.0.2"
+  s.version      = "1.0.3"
   s.summary      = "Simple straightforward Swift-based Core Data stack framework for iOS, macOS, watchOS, and tvOS"
   s.description  = <<-DESC
 I got tired of adding the same boilerplate Core Data stack code to every Swift app I created, so I just put together this small framework to encapsulate the code for more simple reuse.
@@ -34,7 +35,7 @@ DESC
   #
 
   s.ios.deployment_target = "10.0"
-  s.osx.deployment_target = "10.11"
+  s.osx.deployment_target = "10.12"
   s.watchos.deployment_target = "3.0"
   s.tvos.deployment_target = "9.0"
 
@@ -47,5 +48,9 @@ DESC
   #
 
   s.source_files  = "Shared/*.swift"
+s.ios.source_files   = 'CRDCoreDataStack/*.h'
+s.osx.source_files   = 'CRDCoreDataStackMac/*.h'
+s.watchos.source_files = 'CRDCoreDataStackWatch/*.h'
+s.tvos.source_files  = 'CRDCoreDataStackTV/*.h'
 
 end

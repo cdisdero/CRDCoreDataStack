@@ -16,9 +16,9 @@ Simple straightforward Swift-based Core Data stack.
 I got tired of adding the same boilerplate Core Data stack code to every Swift app I created, so I just put together this small framework to encapsulate the code for more simple reuse.
 
 ## Requirements
-- iOS 10.0+ / macOS 10.11+ / watchOS 3.0+ / tvOS 9.0+
-- Xcode 9.0+
-- Swift 4.0+
+- iOS 11.0+ / macOS 10.12+ / watchOS 3.0+ / tvOS 11.0+
+- Xcode 10.1+
+- Swift 4.2+
 
 ## Installation
 You can simply copy the following files from the GitHub tree into your project:
