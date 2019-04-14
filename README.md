@@ -17,8 +17,8 @@ I got tired of adding the same boilerplate Core Data stack code to every Swift a
 
 ## Requirements
 - iOS 11.0+ / macOS 10.12+ / watchOS 3.0+ / tvOS 11.0+
-- Xcode 10.1+
-- Swift 4.2+
+- Xcode 10.2+
+- Swift 5.0+
 
 ## Installation
 You can simply copy the following files from the GitHub tree into your project:
@@ -35,7 +35,7 @@ Alternatively, you can install it as a Cocoapod
 $ gem install cocoapods
 ```
 
-> CocoaPods 1.1.0+ is required to build CRDCoreDataStack
+> CocoaPods 1.7.0+ is required to build CRDCoreDataStack
 
 To integrate CRDCoreDataStack into your Xcode project using CocoaPods, specify it in your `Podfile`:
 
